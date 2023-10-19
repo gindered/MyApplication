@@ -12,50 +12,45 @@ in einer Android-Anwendung definiert-->
         android:id="@+id/lvItems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnAddItem"
+        android:layout_above="@+id/LinLayout"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         />
 
-    <EditText
-        android:id="@+id/etNewItem"
-        android:layout_width="185dp"
+    <LinearLayout
+        android:id="@+id/LinLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btnAddItem"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_toStartOf="@+id/btnAddItem"
-        android:layout_toLeftOf="@+id/btnAddItem"
-        android:hint="Enter a new item" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/etNewItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter a new item"
+            android:layout_weight = "1"
+            android:layout_marginHorizontal="2dp"/>
 
 
-    <Button
-        android:id="@+id/btnAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+        <Button
+            android:id="@+id/btnAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAddItem"
+            android:text="Add Item"
+            android:layout_marginHorizontal="2dp"/>
 
-        android:layout_marginRight="100dp"
-        android:onClick="onAddItem"
-        android:text="Add Item" />
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDeleteItem"
+            android:text="Delete"
+            android:layout_marginHorizontal="2dp"/>
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnAddItem"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="onDeleteItem"
-        android:text="Delete" />
+    </LinearLayout>
 
 </RelativeLayout>
 
