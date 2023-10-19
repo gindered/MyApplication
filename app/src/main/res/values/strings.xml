@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">MyApplication</string>
-    <string name="my_variable">Guten Tag Android!</string>
+    <string name="app_name">ToDo-App</string>
 </resources>
 
 <!-- my_variable findet man unter activity_main.xml -->

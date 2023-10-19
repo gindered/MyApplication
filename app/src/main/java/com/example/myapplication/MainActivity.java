@@ -99,6 +99,19 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             });
+        lvItems.setOnItemClickListener(
+            new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+                    // Remove the item within array at position
+                    items.remove(pos);
+
+                    // Refresh the adapter
+                    itemsAdapter.notifyDataSetChanged();
+                    // Return true consumes the long click event (marks it handled)
+                    writeItems();
+                }
+            });
     }
 
     public void onAddItem(View v) {
@@ -110,6 +123,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onDeleteItem(View v) {
-
+        // Delete Item
     }
 }
