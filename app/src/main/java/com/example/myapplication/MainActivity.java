@@ -2,16 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         //list = findViewById(R.id.list);
         lvItems = (ListView) findViewById(R.id.lvItems);
-        items = new ArrayList<String>();
+        items = new ArrayList<>();
         readItems();
-        itemsAdapter = new ArrayAdapter<String>(this,
+        itemsAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, items);
 
         lvItems.setAdapter(itemsAdapter);
@@ -68,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             items = new ArrayList<String>(FileUtils.readLines(todoFile));
         } catch (IOException e) {
-            items = new ArrayList<String>();
+            items = new ArrayList<>();
         }
     }
 
@@ -84,10 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupListViewListener() {
         lvItems.setOnItemLongClickListener(
-            new AdapterView.OnItemLongClickListener() {
-                @Override
-                public boolean onItemLongClick(AdapterView<?> adapter,
-                                               View item, int pos, long id) {
+                (adapter, item, pos, id) -> {
                     // Remove the item within array at position
                     items.remove(pos);
 
@@ -96,13 +88,9 @@ public class MainActivity extends AppCompatActivity {
                     // Return true consumes the long click event (marks it handled)
                     writeItems();
                     return true;
-                }
-
-            });
+                });
         lvItems.setOnItemClickListener(
-            new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+                (parent, view, pos, id) -> {
                     // Remove the item within array at position
                     items.remove(pos);
 
@@ -110,8 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     itemsAdapter.notifyDataSetChanged();
                     // Return true consumes the long click event (marks it handled)
                     writeItems();
-                }
-            });
+                });
     }
 
     public void onAddItem(View v) {
