@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Hier verwendet das angepasste Thema den Namen "Base.Theme.MyApplication" und erbt
+    von der vordefinierten Theme.Material3.DayNight.NoActionBar -->
+
+    <!-- "name="Base.Theme.MyApplication"" = ist der Name eines Basisthemas, das in
+    der XML-Datei definiert ist. Dieses Basisthema dient als Ausgangspunkt für die
+    Anpassung des Gesamtaussehens und Verhaltens der Anwendung -->
+
+    <!-- Theme.Material3.DayNight.NoActionBar = Es handelt sich um ein Theme,
+    das den Material Design-Stil verwendet und sowohl den Tag- als auch den
+    Nachtmodus unterstützt. Es hat keine Action Bar -->
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+    <!--  Zusätzlich wird ein weiteres Thema namens "Theme.MyApplication" definiert,
+    das von "Base.Theme.MyApplication" erbt.-->
+
+    <!-- Theme.MyApplication = Es kann spezifische Anpassungen am Basisthema vornehmen,
+    um das Aussehen und Verhalten der Anwendung weiter anzupassen-->
+
+    <!-- Theme.MyApplication = Es kann spezifische Anpassungen am Basisthema vornehmen,
+    um das Aussehen und Verhalten der Anwendung weiter anzupassen-->
+</resources>
+
+<!--  Diese ganzen Themen können verwendet werden, um das Aussehen und Verhalten
+    einer Android-Anwendung anzupassen.-->

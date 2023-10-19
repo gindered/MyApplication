@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- In der activity_main.xml-Datei wird das Layout für die Hauptaktivität
+in einer Android-Anwendung definiert-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/lvItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnAddItem"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <EditText
+        android:id="@+id/etNewItem"
+        android:layout_width="185dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnAddItem"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_toStartOf="@+id/btnAddItem"
+        android:layout_toLeftOf="@+id/btnAddItem"
+        android:hint="Enter a new item" />
+
+
+    <Button
+        android:id="@+id/btnAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginRight="100dp"
+        android:onClick="onAddItem"
+        android:text="Add Item" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnAddItem"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="onDeleteItem"
+        android:text="Delete" />
+
+</RelativeLayout>
+
+<!-- `<androidx.constraintlayout.widget.ConstraintLayout>`: Dieses Tag definiert
+das Wurzelelement des Layouts als ein ConstraintLayout, das ein flexibles Layout
+zur Positionierung von UI-Elementen bietet -->
+
+<!-- `android:layout_width="match_parent"`: Diese Eigenschaft legt die Breite des
+Wurzelelements auf die gleiche Breite wie das übergeordnete Elternelement fest -->
+
+<!-- android:label="@string/app_name": Der Name der Anwendung, der angezeigt wird -->
+
+<!-- `android:layout_height="match_parent"`: Diese Eigenschaft legt die Höhe des
+Wurzelelements auf die gleiche Höhe wie das übergeordnete Elternelement fest -->
+
+<!-- `tools:context=".MainActivity"`: Diese Eigenschaft definiert den Kontext der
+Layout-Datei als die MainActivity-Klasse. Dies ist hilfreich für die Vorschau des
+Layouts in der Designansicht des Android Studio -->
+
+<!-- `android:layout_width="wrap_content"`: Diese Eigenschaft legt die Breite
+des TextViews auf die Breite des Textinhalts fest -->
+
+<!-- `app:layout_constraintBottom_toBottomOf="parent"`: Dies definiert eine Verbindung
+zwischen dem unteren Kantenpunkt des TextViews und dem unteren Kantenpunkt des
+Elternelements (ConstraintLayout), um die vertikale Positionierung zu steuern -->
+
+<!-- `app:layout_constraintEnd_toEndOf="parent"`: Dies definiert eine Verbindung zwischen
+dem rechten Kantenpunkt des TextViews und dem rechten Kantenpunkt des Elternelements,
+um die horizontale Positionierung zu steuern-->
+
+<!-- `app:layout_constraintStart_toStartOf="parent"`: Dies definiert eine Verbindung
+zwischen dem linken Kantenpunkt des TextViews und dem linken Kantenpunkt des Elternelements,
+um die horizontale Positionierung zu steuern-->
+
+<!-- `app:layout_constraintTop_toTopOf="parent"`: Dies definiert eine Verbindung
+zwischen dem oberen Kantenpunkt des TextViews und dem oberen Kantenpunkt des Elternelements,
+um die vertikale Positionierung zu steuern-->
+
+<!--  Das ConstraintLayout wird verwendet, um die Position des TextViews zu definieren,
+indem Verbindungen zu den Kantenpunkten des ConstraintLayouts hergestellt werden -->
