@@ -108,20 +108,17 @@ public class MainActivity extends AppCompatActivity {
         lvItems.setOnItemLongClickListener(
                 (adapter, item, pos, id) -> {
                     // Remove the item within array at position
-                    itemsDoneAdapter.add(items.get(pos));
-                    items.remove(pos);
-                    //itemsDone.add(items.get(pos));
+                    onDeleteItem(pos);
 
                     // Refresh the adapter
                     itemsAdapter.notifyDataSetChanged();
-                    itemsDoneAdapter.notifyDataSetChanged();
                     // Return true consumes the long click event (marks it handled)
                     writeItems();
                     return true;
                 });
         lvItems.setOnItemClickListener(
                 (parent, view, pos, id) -> {
-                    // Remove the item within array at position
+                    // Switch array of item
                     itemsDoneAdapter.add(items.get(pos));
                     items.remove(pos);
                     //itemsDone.add(items.get(pos));
@@ -135,12 +132,9 @@ public class MainActivity extends AppCompatActivity {
         lvItemsDone.setOnItemLongClickListener(
                 (adapter, item, pos, id) -> {
                     // Remove the item within array at position
-                    itemsAdapter.add(itemsDone.get(pos));
-                    itemsDone.remove(pos);
-                    //itemsDone.add(items.get(pos));
+                    onDeleteItemDone(pos);
 
                     // Refresh the adapter
-                    itemsAdapter.notifyDataSetChanged();
                     itemsDoneAdapter.notifyDataSetChanged();
                     // Return true consumes the long click event (marks it handled)
                     writeItems();
@@ -148,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 });
         lvItemsDone.setOnItemClickListener(
                 (parent, view, pos, id) -> {
-                    // Remove the item within array at position
+                    // Switch array of item
                     itemsAdapter.add(itemsDone.get(pos));
                     itemsDone.remove(pos);
                     //itemsDone.add(items.get(pos));
@@ -171,7 +165,12 @@ public class MainActivity extends AppCompatActivity {
         writeItems();
     }
 
-    public void onDeleteItem(View v) {
+    public void onDeleteItem(int pos) {
         // Delete Item
+        items.remove(pos);
+    }
+    public void onDeleteItemDone(int pos) {
+        // Delete Item
+        itemsDone.remove(pos);
     }
 }
