@@ -2,20 +2,17 @@
 <!-- In der activity_main.xml-Datei wird das Layout für die Hauptaktivität
 in einer Android-Anwendung definiert-->
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/lvItemsTitel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ToDo"
+        android:text="@string/open_tasks"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         />
 
@@ -32,7 +29,7 @@ in einer Android-Anwendung definiert-->
         android:layout_height="wrap_content"
         android:layout_below="@id/lvItems"
         android:background="#aaaaaa"
-        android:text="Done"
+        android:text="@string/done_tasks"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/my_colorbutton"
         android:textStyle="italic" />
@@ -57,13 +54,15 @@ in einer Android-Anwendung definiert-->
 
         <EditText
             android:id="@+id/etNewItem"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Enter a new item"
-            android:layout_weight = "1"
             android:layout_marginHorizontal="2dp"
+            android:layout_weight="1"
+            android:hint="@string/text_new_item"
+            android:inputType="text|textAutoComplete|textAutoCorrect"
             android:textColor="@color/white"
-            />
+            android:textColorHint="@color/white"
+            android:autofillHints="todo" />
 
 
         <Button
@@ -73,9 +72,8 @@ in einer Android-Anwendung definiert-->
             android:layout_marginHorizontal="2dp"
             android:backgroundTint="@color/my_colorbutton"
             android:onClick="onAddItem"
-            android:text="Add Item"
-            android:textColor="@color/white"
-            />
+            android:text="@string/button_add_item"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

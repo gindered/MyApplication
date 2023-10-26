@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">ToDo-App</string>
+    <string name="open_tasks">ToDo-App</string>
+    <string name="done_tasks">ToDo-App</string>
+    <string name="button_add_item">ADD</string>
+    <string name="text_new_item">Enter a new item</string>
 </resources>
 
 <!-- my_variable findet man unter activity_main.xml -->
