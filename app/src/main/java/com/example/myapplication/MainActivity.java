@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import org.apache.commons.io.FileUtils;
 
 // ToDo
-// - Toolbar
+// - Toolbar?
 // - Delet Button durch swipen ersetzten
 // x Erledigte durchstreichen
 // x Listen an Toolbar anhängen
 // x Leerer Text soll nicht hinzugefügt werden können
-// - speichern der erledigten Items
+// x speichern der erledigten Items
 
 //Die `MainActivity.java` ist eine Java-Datei in Android Studio, die eine Aktivitätsklasse
 // repräsentiert. Eine Aktivität ist ein grundlegender Bestandteil einer Android-App und
@@ -77,18 +77,28 @@ public class MainActivity extends AppCompatActivity {
     private void readItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
+        File todoDoneFile = new File(filesDir, "todoDone.txt");
         try {
             items = new ArrayList<String>(FileUtils.readLines(todoFile));
         } catch (IOException e) {
             items = new ArrayList<>();
+        }try {
+            itemsDone = new ArrayList<String>(FileUtils.readLines(todoDoneFile));
+        } catch (IOException e) {
+            itemsDone = new ArrayList<>();
         }
     }
 
     private void writeItems() {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
+        File todoDoneFile = new File(filesDir, "todoDone.txt");
         try {
             FileUtils.writeLines(todoFile, items);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }try {
+            FileUtils.writeLines(todoDoneFile, itemsDone);
         } catch (IOException e) {
             e.printStackTrace();
         }
