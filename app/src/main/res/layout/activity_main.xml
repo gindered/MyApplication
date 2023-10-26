@@ -2,20 +2,58 @@
 <!-- In der activity_main.xml-Datei wird das Layout für die Hauptaktivität
 in einer Android-Anwendung definiert-->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/my_colorbutton"
+        android:visibility="visible"
+        app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
+        />
+
+    <TextView
+        android:id="@+id/lvItemsTitel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ToolBar"
+        android:text="ToDo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        />
 
     <ListView
         android:id="@+id/lvItems"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/LinLayout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/lvItemsTitel"
+        />
+
+    <TextView
+        android:id="@+id/lvItemsDoneTitel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvItems"
+        android:background="#aaaaaa"
+        android:text="Done"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/my_colorbutton"
+        android:textStyle="italic" />
+
+    <ListView
+        android:id="@+id/lvItemsDone"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvItemsDoneTitel"
+        android:background="#aaaaaa"
         />
 
     <LinearLayout
@@ -23,7 +61,9 @@ in einer Android-Anwendung definiert-->
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        >
 
         <EditText
             android:id="@+id/etNewItem"
@@ -31,24 +71,28 @@ in einer Android-Anwendung definiert-->
             android:layout_height="wrap_content"
             android:hint="Enter a new item"
             android:layout_weight = "1"
-            android:layout_marginHorizontal="2dp"/>
+            android:layout_marginHorizontal="2dp"
+            android:textColor="@color/white"
+            />
 
 
         <Button
             android:id="@+id/btnAddItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:backgroundTint="@color/my_colorbutton"
             android:onClick="onAddItem"
-            android:text="Add Item"
-            android:layout_marginHorizontal="2dp"/>
+            android:text="Add Item" />
 
         <Button
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
+            android:backgroundTint="@color/my_colorbutton"
             android:onClick="onDeleteItem"
-            android:text="Delete"
-            android:layout_marginHorizontal="2dp"/>
+            android:text="Delete" />
 
     </LinearLayout>
 
