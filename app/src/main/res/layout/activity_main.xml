@@ -11,20 +11,10 @@ in einer Android-Anwendung definiert-->
     tools:context=".MainActivity"
     >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/ToolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/my_colorbutton"
-        android:visibility="visible"
-        app:navigationIcon="@android:drawable/ic_menu_sort_by_size"
-        />
-
     <TextView
         android:id="@+id/lvItemsTitel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ToolBar"
         android:text="ToDo"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         />
@@ -83,7 +73,8 @@ in einer Android-Anwendung definiert-->
             android:layout_marginHorizontal="2dp"
             android:backgroundTint="@color/my_colorbutton"
             android:onClick="onAddItem"
-            android:text="Add Item" />
+            android:text="Add Item"
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/delete"
@@ -92,7 +83,8 @@ in einer Android-Anwendung definiert-->
             android:layout_marginHorizontal="2dp"
             android:backgroundTint="@color/my_colorbutton"
             android:onClick="onDeleteItem"
-            android:text="Delete" />
+            android:text="Delete"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
