@@ -79,11 +79,11 @@ public class MainActivity extends AppCompatActivity {
         File todoFile = new File(filesDir, "todo.txt");
         File todoDoneFile = new File(filesDir, "todoDone.txt");
         try {
-            items = new ArrayList<String>(FileUtils.readLines(todoFile));
+            items = new ArrayList<>((ArrayList<String>) FileUtils.readLines(todoFile));
         } catch (IOException e) {
             items = new ArrayList<>();
         }try {
-            itemsDone = new ArrayList<String>(FileUtils.readLines(todoDoneFile));
+            itemsDone = new ArrayList<>((ArrayList<String>) FileUtils.readLines(todoDoneFile));
         } catch (IOException e) {
             itemsDone = new ArrayList<>();
         }
