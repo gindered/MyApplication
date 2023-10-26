@@ -15,11 +15,11 @@ import org.apache.commons.io.FileUtils;
 
 // ToDo
 // - Toolbar?
-// - Delet Button durch swipen ersetzten
-// x Erledigte durchstreichen
-// x Listen an Toolbar anhängen
-// x Leerer Text soll nicht hinzugefügt werden können
-// x speichern der erledigten Items
+// - Delete Button with swipe
+// x different appearance for Done items
+// x display lists on top of the display
+// x remove ability to add empty todos
+// x save done items
 
 //Die `MainActivity.java` ist eine Java-Datei in Android Studio, die eine Aktivitätsklasse
 // repräsentiert. Eine Aktivität ist ein grundlegender Bestandteil einer Android-App und

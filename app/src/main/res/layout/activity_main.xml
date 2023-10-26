@@ -74,17 +74,8 @@ in einer Android-Anwendung definiert-->
             android:backgroundTint="@color/my_colorbutton"
             android:onClick="onAddItem"
             android:text="Add Item"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="2dp"
-            android:backgroundTint="@color/my_colorbutton"
-            android:onClick="onDeleteItem"
-            android:text="Delete"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            />
 
     </LinearLayout>
 
