@@ -9,7 +9,7 @@ in einer Android-Anwendung definiert-->
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/lvItemsTitel"
+        android:id="@+id/lvItemsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/open_tasks"
@@ -20,11 +20,11 @@ in einer Android-Anwendung definiert-->
         android:id="@+id/lvItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvItemsTitel"
+        android:layout_below="@id/lvItemsTitle"
         />
 
     <TextView
-        android:id="@+id/lvItemsDoneTitel"
+        android:id="@+id/lvItemsDoneTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/lvItems"
@@ -39,7 +39,7 @@ in einer Android-Anwendung definiert-->
         android:textStyle="italic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lvItemsDoneTitel"
+        android:layout_below="@id/lvItemsDoneTitle"
         android:background="#aaaaaa"
         />
 
