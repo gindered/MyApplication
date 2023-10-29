@@ -31,7 +31,7 @@ in einer Android-Anwendung definiert-->
         android:background="#aaaaaa"
         android:text="@string/done_tasks"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/my_colorbutton"
+        android:textColor="@color/accent"
         android:textStyle="italic" />
 
     <ListView
@@ -70,7 +70,7 @@ in einer Android-Anwendung definiert-->
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="2dp"
-            android:backgroundTint="@color/my_colorbutton"
+            android:backgroundTint="@color/accent"
             android:onClick="onAddItem"
             android:text="@string/button_add_item"
             android:textColor="@color/white"/>
