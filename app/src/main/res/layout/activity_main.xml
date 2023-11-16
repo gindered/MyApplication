@@ -2,82 +2,111 @@
 <!-- In der activity_main.xml-Datei wird das Layout für die Hauptaktivität
 in einer Android-Anwendung definiert-->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/lvItemsTitle"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/open_tasks"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        />
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
 
-    <ListView
-        android:id="@+id/lvItems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvItemsTitle"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="true"
+            android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/lvItemsDoneTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvItems"
-        android:background="#aaaaaa"
-        android:text="@string/done_tasks"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/accent"
-        android:textStyle="italic" />
+            <TextView
+                android:id="@+id/lvItemsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/open_tasks"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/accent" />
 
-    <ListView
-        android:id="@+id/lvItemsDone"
-        android:textStyle="italic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvItemsDoneTitle"
-        android:background="#aaaaaa"
-        />
+            <ListView
+                android:id="@+id/lvItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/lvItemsDoneTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/done_tasks"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="?android:attr/textColorPrimary" />
+
+            <ListView
+                android:id="@+id/lvItemsDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
         android:id="@+id/LinLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/accent"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:background="@color/black"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:contentDescription="TODO"
+            android:scaleType="center"
+            app:srcCompat="@drawable/add_image" />
 
         <EditText
             android:id="@+id/etNewItem"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
             android:layout_weight="1"
+            android:autofillHints="todo"
+            android:background="@drawable/rounded_edittext"
+            android:drawableEnd="@android:drawable/ic_notification_clear_all"
+            android:drawableTint="@color/accent"
             android:hint="@string/text_new_item"
             android:inputType="text|textAutoComplete|textAutoCorrect"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:autofillHints="todo" />
+            android:textAlignment="center"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textColorHighlight="@color/accent"
+            android:textColorHint="?android:attr/textColorPrimary"
+            android:textColorLink="?android:attr/textColorPrimary"
+            android:textCursorDrawable="@color/accent" />
 
 
         <Button
             android:id="@+id/btnAddItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="2dp"
-            android:backgroundTint="@color/accent"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="?android:attr/windowBackground"
             android:onClick="onAddItem"
             android:text="@string/button_add_item"
-            android:textColor="@color/white"/>
+            android:textColor="?android:attr/textColorPrimary"
+            app:cornerRadius="20dp" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 <!-- `<androidx.constraintlayout.widget.ConstraintLayout>`: Dieses Tag definiert
 das Wurzelelement des Layouts als ein ConstraintLayout, das ein flexibles Layout

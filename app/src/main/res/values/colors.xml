@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="accent">#0000FF</color>
+    <color name="accent">#3478F6</color>
 </resources>
 
 <!-- Es handelt sich um eine XML-Datei, die Farbwerte definiert, die im Projekt

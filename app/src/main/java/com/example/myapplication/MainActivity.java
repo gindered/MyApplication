@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.io.File;
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         readItems();
         itemsAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_multiple_choice, items);
+                R.layout.layout_list, items);
         lvItems.setAdapter(itemsAdapter);
 
         itemsDoneAdapter = new ArrayAdapter<>(this,
