@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                     // Switch array of item
                     itemsDoneAdapter.add(items.get(pos));
                     items.remove(pos);
-                    //itemsDone.add(items.get(pos));
 
                     // Refresh the adapter
                     itemsAdapter.notifyDataSetChanged();
@@ -145,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                     // Switch array of item
                     itemsAdapter.add(itemsDone.get(pos));
                     itemsDone.remove(pos);
-                    //itemsDone.add(items.get(pos));
 
                     // Refresh the adapter
                     itemsAdapter.notifyDataSetChanged();

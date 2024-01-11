@@ -8,40 +8,50 @@ in einer Android-Anwendung definiert-->
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/lvItemsTitle"
+    <LinearLayout
+        android:id="@+id/lvItemsLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/open_tasks"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lvItemsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_tasks"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <ListView
+            android:id="@+id/lvItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lvItemsTitle" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lvItemsDoneLayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/lvItemsLayout"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lvItemsDoneTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/done_tasks"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         />
 
-    <ListView
-        android:id="@+id/lvItems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvItemsTitle"
+        <ListView
+            android:id="@+id/lvItemsDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lvItemsDoneTitle"
         />
 
-    <TextView
-        android:id="@+id/lvItemsDoneTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvItems"
-        android:background="#aaaaaa"
-        android:text="@string/done_tasks"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/accent"
-        android:textStyle="italic" />
-
-    <ListView
-        android:id="@+id/lvItemsDone"
-        android:textStyle="italic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lvItemsDoneTitle"
-        android:background="#aaaaaa"
-        />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LinLayout"
